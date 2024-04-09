@@ -1,7 +1,6 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Project title
-Single-Cell Gene Network Analysis
+# Single-Cell Gene Network Analysis using LLMs
 
 <!-- Provide a short description to your project -->
 
