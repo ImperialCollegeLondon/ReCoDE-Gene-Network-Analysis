@@ -6,20 +6,15 @@
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae pulvinar
-mauris. Praesent sollicitudin rutrum mauris sed congue. Donec vel orci elit.
-Phasellus luctus sodales elementum. Donec lacinia semper lorem, volutpat
-molestie arcu bibendum mollis. Nulla nec massa vitae sapien varius vulputate
-vel vitae ex. Curabitur convallis iaculis elit at faucibus. Sed eget facilisis
-orci, ut consequat neque.
+The aim of this exemplar is to understand and demonstrate how to carry out single-cell gene network analysis on real data. Specifically, we will model networks in a small, publicly available Alzheimer's Disease dataset as well as explore them further through downstream analysis. This will consist of characterising the networks through gene set enrichment analysis and understanding the principles behind this. The modelling itself will encompass learning how to use deep learning techniques, such as natural language processing and large language models to construct networks. Together, this will provide an undertanding as well as practical experience with an end-to-end pipeline using single-cell data for gene network analysis.
 
 <!-- What should the students going through your exemplar learn -->
 
 ## Learning Outcomes
 
-- Skill 1
-- Skill 2
-- Skill 3
+- Gain an understanding be able to summarise the significance of biological networks in interpreting complex cellular processes and disease mechanisms.
+- Be able to use knowledge of NLP and LLMs to apply a specific model to a test dataset, in order construct gene networks.
+- Evaluate and relate findings to practical implications of gene networks in biological research through gene set enrichment analysis.
 
 <!-- How long should they spend reading and practising using your Code.
 Provide your best estimate -->
@@ -32,12 +27,9 @@ Provide your best estimate -->
 ## Requirements
 
 <!--
-If your exemplar requires students to have a background knowledge of something
-especially this is the place to mention that.
-
-List any resources you would recommend to get the students started.
-
-If there is an existing exemplar in the ReCoDE repositories link to that.
+- Familiarity with Python
+- Basic knowledge on NLP and LLMs
+- Basic knowledge on single-cell RNA-sequencing
 -->
 
 ### Academic
@@ -52,9 +44,6 @@ Here are some examples:
 - Anaconda
 - Python 3.11 or newer
 - Access to the HPC
-- PETSc v3.16
-- gfortran compiler
-- Paraview
 -->
 
 ### System
@@ -75,6 +64,34 @@ By the end of it you should be able to solve exercises 2 to 4.
 A final exercise can be found in the `final` folder.
 
 Solutions to the above can be found in `solutions`.
+
+To get started, first clone this repo, then change directories into it:
+git clone https://github.com/AnjaliS1/ReCoDe-Gene-Network-Analysis.git
+cd ReCoDe-Gene-Network-Analysis
+
+If python virtualenv and Jupyter Lab isn't already installed on your system, install it using:
+```python
+  python3 -m pip install virtualenv
+  python3 -m pip install jupyterlab
+```
+Then create a virtual environment for this exemplar:
+```python
+python3 -m venv venv_recode_GeneNetworkAnalysis
+```
+Source into your new virtual environment using:
+```python
+source venv_recode_firstdawn/bin/activate
+```
+Run this line to install all the necessary packages:
+```python
+pip install -r requirements.txt
+```
+Finally, run these two lines to setup your virtual env with jupyter lab notebook.
+```python
+pip install ipykernel
+python -m ipykernel install --user --name=venv_recode_GeneNetworkAnalysis
+```
+
 -->
 
 ## Getting Started
