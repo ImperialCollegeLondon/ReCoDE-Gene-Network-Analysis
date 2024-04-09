@@ -27,10 +27,11 @@ Provide your best estimate -->
 ## Requirements
 
 <!--
+-->
 - Familiarity with Python
 - Basic knowledge on NLP and LLMs
 - Basic knowledge on single-cell RNA-sequencing
--->
+
 
 ### Academic
 
@@ -64,6 +65,7 @@ By the end of it you should be able to solve exercises 2 to 4.
 A final exercise can be found in the `final` folder.
 
 Solutions to the above can be found in `solutions`.
+-->
 
 To get started, first clone this repo, then change directories into it:
 git clone https://github.com/AnjaliS1/ReCoDe-Gene-Network-Analysis.git
@@ -92,7 +94,7 @@ pip install ipykernel
 python -m ipykernel install --user --name=venv_recode_GeneNetworkAnalysis
 ```
 
--->
+
 
 ## Getting Started
 
