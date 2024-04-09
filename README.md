@@ -1,6 +1,7 @@
 <!-- Your Project title, make it sound catchy! -->
 
 # Project title
+Single-Cell Gene Network Analysis
 
 <!-- Provide a short description to your project -->
 
