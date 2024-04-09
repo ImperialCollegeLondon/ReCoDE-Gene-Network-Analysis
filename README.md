@@ -68,9 +68,10 @@ Solutions to the above can be found in `solutions`.
 -->
 
 To get started, first clone this repo, then change directories into it:
+```python
 git clone https://github.com/AnjaliS1/ReCoDe-Gene-Network-Analysis.git
 cd ReCoDe-Gene-Network-Analysis
-
+```
 If python virtualenv and Jupyter Lab isn't already installed on your system, install it using:
 ```python
   python3 -m pip install virtualenv
