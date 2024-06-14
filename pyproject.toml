@@ -1,0 +1,40 @@
+[project]
+name = "ReCoDE-Gene-Network-Analysis"
+version = "0.1.0"
+authors = [
+    {name = "Anjali Golding", email = "anjali.golding20@imperial.ac.uk"},
+    {name = "John Pinney", email = "j.pinney@imperial.ac.uk"},
+    {name = "Ryan Smith", email = "ryan.smith@imperial.ac.uk"}
+]
+dependencies = ["mkdocs", "mkdocs-include-markdown-plugin", "mkdocs-jupyter", "mkdocs-material", "python-markdown-math", "ipykernel", "pandas", "scanpy"]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "mypy",
+    "pip-tools",
+    "pre-commit",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.mypy]
+disallow_any_explicit = false
+disallow_any_generics = true
+warn_unreachable = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+exclude = [".venv/", "docs/"]
+
+[tool.ruff.lint]
+select = [
+    "D",    # pydocstyle
+    "E",    # pycodestyle
+    "F",    # Pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "RUF",  # ruff
+]
+pydocstyle_convention = "google"
