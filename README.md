@@ -32,19 +32,69 @@ Provide your best estimate -->
 - Basic knowledge on NLP and LLMs
 - Basic knowledge on single-cell RNA-sequencing
 
+## Getting Started
 
-### Academic
+### Cloning the repository
 
-<!-- List the system requirements and how to obtain them, that can be as simple
-as adding a hyperlink to as detailed as writting step-by-step instructions.
-How detailed the instructions should be will vary on a case-by-case basis.
+If you don't have it already, install git to your machine, see [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for details on all OS's.
 
-Here are some examples:
+Once installed, run the following to clone the repository and change the working directory to the clones repository:
 
-- 50 GB of disk space to hold Dataset X
-- Anaconda
-- Python 3.11 or newer
-- Access to the HPC
+```bash
+git clone https://github.com/ImperialCollegeLondon/ReCoDE-Gene-Network-Analysis.git
+cd ReCoDE-Gene-Network-Analysis
+```
+
+### Setting up your environment
+
+Before installing the project dependencies, it's recommended to set up a virtual environment. This ensures that the dependencies for this project do not interfere with those of other Python projects you may be working on. Follow these steps to create and activate a virtual environment:
+
+1. **Create a Virtual Environment**
+
+If you haven't already, navigate to the root directory of the project and run the following command to create a virtual environment. This command creates a new directory `.venv` which will contain all the necessary executables to use the packages that a Python project would need.
+
+  ```bash
+  python3 -m venv .venv
+  ```
+
+1. **Activate the Virtual Environment**
+
+After creating the virtual environment, you need to activate it. Activation of the virtual environment will change your shell’s prompt to show what virtual environment you’re using, and modify the environment so that running python will get you that particular version and installation of Python.
+  
+- **On Windows**
+
+```bash
+.\venv\Scripts\activate
+```
+
+- **On Unix or MacOS**
+
+```bash
+source venv_recode_GeneNetworkAnalysis/bin/activate
+```
+
+This command needs to be run every time you start a new terminal session and want to work on this project.
+
+1. **Install Dependencies**
+
+With the virtual environment activated, install the project dependencies by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+Remember to deactivate your virtual environment when you're done working on the project by running deactivate.
+
+<!-- An overview of the files and folder in the exemplar.
+Not all files and directories need to be listed, just the important
+sections of your project, like the learning material, the code, the tests, etc.
+
+A good starting point is using the command `tree` in a terminal(Unix),
+copying its output and then removing the unimportant parts.
+
+You can use ellipsis (...) to suggest that there are more files or folders
+in a tree node.
+
 -->
 
 ### System
@@ -67,49 +117,51 @@ A final exercise can be found in the `final` folder.
 Solutions to the above can be found in `solutions`.
 -->
 
-To get started, first clone this repo, then change directories into it:
-```python
-git clone https://github.com/AnjaliS1/ReCoDe-Gene-Network-Analysis.git
-cd ReCoDe-Gene-Network-Analysis
-```
-If python virtualenv and Jupyter Lab isn't already installed on your system, install it using:
-```python
-  python3 -m pip install virtualenv
-  python3 -m pip install jupyterlab
-```
-Then create a virtual environment for this exemplar:
-```python
-python3 -m venv venv_recode_GeneNetworkAnalysis
-```
-Source into your new virtual environment using:
-```python
-source venv_recode_firstdawn/bin/activate
-```
-Run this line to install all the necessary packages:
-```python
-pip install -r requirements.txt
-```
-Finally, run these two lines to setup your virtual env with jupyter lab notebook.
-```python
-pip install ipykernel
-python -m ipykernel install --user --name=venv_recode_GeneNetworkAnalysis
+## Development
+
+This project uses `pre-commit` and `pip-tools` for managing pre-commit hooks and dependencies respectively. Follow these steps to set up your development environment:
+
+### Setting up pre-commit
+
+1. Install pre-commit on your system. If you haven't installed it yet, you can do so by running:
+
+```sh
+pip install pre-commit
 ```
 
+1. Once installed, you can set up the pre-commit hooks by running the following command in the root directory of this project:
 
+```sh
+pre-commit install
+```
 
-## Getting Started
+This will install all the pre-commit hooks defined in .pre-commit-config.yaml into your local repository. These hooks will automatically run on every commit to ensure code quality and consistency.
 
-<!-- An overview of the files and folder in the exemplar.
-Not all files and directories need to be listed, just the important
-sections of your project, like the learning material, the code, the tests, etc.
+### Managing Dependencies with pip-tools
 
-A good starting point is using the command `tree` in a terminal(Unix),
-copying its output and then removing the unimportant parts.
+Dependencies are managed using the [pip-tools](https://github.com/jazzband/pip-tools) tool chain.
 
-You can use ellipsis (...) to suggest that there are more files or folders
-in a tree node.
+Unpinned dependencies are specified in `pyproject.toml`. Pinned versions are then produced with:
 
--->
+```bash
+pip-compile pyproject.toml
+```
+
+To add/remove packages edit `pyproject.toml` and run the above command. To upgrade all existing dependencies run:
+
+```bash
+pip-compile --upgrade pyproject.toml
+```
+
+Dependencies for developers are listed separately as optional, with the pinned versions being saved to `dev-requirements.txt` instead.
+
+`pip-tools` can also manage these dependencies by adding extra arguments, e.g.:
+
+```bash
+pip-compile -o dev-requirements.txt --extra=dev pyproject.toml
+```
+
+When dependencies are upgraded, both requirements.txt and dev-requirements.txt should be regenerated so that they are in sync.
 
 ## Project Structure
 
