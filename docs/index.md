@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 <!--
 This includes your top-level README as you index page i.e. homepage.
 
