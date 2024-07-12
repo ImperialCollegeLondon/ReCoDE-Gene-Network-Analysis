@@ -38,4 +38,6 @@ select = [
     "UP",   # pyupgrade
     "RUF",  # ruff
 ]
-pydocstyle_convention = "google"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
