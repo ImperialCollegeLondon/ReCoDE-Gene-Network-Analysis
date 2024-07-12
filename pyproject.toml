@@ -6,7 +6,7 @@ authors = [
     {name = "John Pinney", email = "j.pinney@imperial.ac.uk"},
     {name = "Ryan Smith", email = "ryan.smith@imperial.ac.uk"}
 ]
-dependencies = ["mkdocs", "mkdocs-include-markdown-plugin", "mkdocs-jupyter", "mkdocs-material", "python-markdown-math", "ipykernel", "pandas", "scanpy"]
+dependencies = ["mkdocs", "mkdocs-include-markdown-plugin", "mkdocs-jupyter", "mkdocs-material", "python-markdown-math", "pandas", "scanpy"]
 requires-python = ">=3.11"
 
 [project.optional-dependencies]
