@@ -1,0 +1,25 @@
+donor_id,nCount_RNA,nFeature_RNA,donor_id,MUTATION,percent.mt,scType_celltype,tissue_type,cell_type,tissue,development_stage,male,female,CH,normal,DNMT3A,TET2,NoMutation
+CH-20-001,2490.0,1403,CH-20-001,DNMT3A R882C,6.1195779601406795,Naive B cells,tissue,B cell,blood,60,1,0,1,0,1,0,0
+CH-20-002,1192.0,629,CH-20-002,"DNMT3A R729W (4%), DNMT3A R736C (2%)",3.8039753255654554,Naive B cells,tissue,B cell,blood,68,1,0,1,0,1,0,0
+CH-20-004,1833.0,985,CH-20-004,"TET2 R1516X (30%), TET2 Q659X (29%), SRSF2 P95H (3%)",5.335195530726257,Naive B cells,tissue,B cell,blood,85,1,0,1,0,0,1,0
+CH-20-005,1966.0,886,CH-20-005,TET2 V1900F (2%),5.314136125654451,Naive B cells,tissue,B cell,blood,58,0,1,1,0,0,1,0
+CH-21-002,1912.0,938,CH-21-002,none,5.657237936772046,Naive B cells,tissue,B cell,blood,48,0,1,0,1,0,0,1
+CH-21-006,1356.0,709,CH-21-006,DNMT3A R882H (13%),5.211848518935133,Naive B cells,tissue,B cell,blood,67,0,1,1,0,1,0,0
+CH-21-008,1117.0,575,CH-21-008,none,8.398347865993575,Naive B cells,tissue,B cell,blood,70,0,1,0,1,0,0,1
+CH-21-013,1321.0,816,CH-21-013,none,4.66321243523316,Naive B cells,tissue,B cell,blood,73,1,0,0,1,0,0,1
+CH-21-014,1064.0,623,CH-21-014,"SRSF2 P95R (40%), TET2 L957Ifs*15 (51%)",4.146576663452266,Naive B cells,tissue,B cell,blood,74,1,0,1,0,0,1,0
+CH-21-017,1880.0,953,CH-21-017,"DNMT3A R882H (20%), IDH2 R140Q (10%), TP53 R273C (5%)",6.5199219838395095,Naive B cells,tissue,B cell,blood,65,1,0,1,0,1,0,0
+CH-21-020,5325.0,2286,CH-21-020,none,5.631045601105481,Naive B cells,tissue,B cell,blood,61,1,0,0,1,0,0,1
+CH-21-021,1671.0,943,CH-21-021,none,3.214285714285714,Naive B cells,tissue,B cell,blood,83,1,0,0,1,0,0,1
+CH-21-028,1690.0,866,CH-21-028,none,6.053894425987449,Naive B cells,tissue,B cell,blood,89,0,1,0,1,0,0,1
+CH-21-029,2180.0,1073,CH-21-029,TET2 G68X (2%),2.570194384449244,Naive B cells,tissue,B cell,blood,83,0,1,1,0,0,1,0
+CH-21-031,1592.0,887,CH-21-031,none,6.734397677793905,Naive B cells,tissue,B cell,blood,78,0,1,0,1,0,0,1
+CH-21-033,2219.0,1138,CH-21-033,TET2 (33%),5.6705670567056705,Naive B cells,tissue,B cell,blood,81,1,0,1,0,0,1,0
+CH-21-034,2010.0,974,CH-21-034,DNMT3A Q816X (8%),7.937365010799136,Naive B cells,tissue,B cell,blood,39,0,1,1,0,1,0,0
+CH-21-036,2686.0,1337,CH-21-036,DNMT3A splice (7%),3.9095438865465697,Naive B cells,tissue,B cell,blood,91,1,0,1,0,1,0,0
+CH-21-037,3546.0,1645,CH-21-037,TET2 (6.2%),4.4737640279041555,Naive B cells,tissue,B cell,blood,71,1,0,1,0,0,1,0
+CH-21-046,1918.0,907,CH-21-046,DNMT3A W305X (24%),4.80708412397217,Naive B cells,tissue,B cell,blood,80,1,0,1,0,1,0,0
+CH-21-073,2148.0,1096,CH-21-073,"SRSF2 (33%), TET2 Y1245Lfs*22 (27%), TET2 Q742X(42%)",5.174488567990373,Naive B cells,tissue,B cell,blood,77,1,0,1,0,0,1,0
+CH-21-074,1322.0,708,CH-21-074,TET2 C1378Y (23%),3.3285612025769504,Naive B cells,tissue,B cell,blood,70,1,0,1,0,0,1,0
+CH-21-077,1715.0,934,CH-21-077,DNMT3A R749C (9.1%),6.539509536784741,Naive B cells,tissue,B cell,blood,50,0,1,1,0,1,0,0
+CH-21-079,1354.0,793,CH-21-079,DNMT3A M880V (5%),6.386292834890965,Naive B cells,tissue,B cell,blood,78,1,0,1,0,1,0,0
