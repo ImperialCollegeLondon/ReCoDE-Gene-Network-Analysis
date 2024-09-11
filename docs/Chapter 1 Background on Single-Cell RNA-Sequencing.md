@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this notebook, we will cover the foundations of single-cell RNA-sequencing, how to acquire and process the data into the desired format for gene network analysis.
+In this notebook, we will cover the foundations of single-cell RNA-sequencing as well as how to acquire and process the data into the desired format for gene network analysis.
 
 ## Learning Objectives
 
@@ -10,30 +10,66 @@ In this notebook, we will cover the foundations of single-cell RNA-sequencing, h
 - Learn how to find publicly accessible snRNA-seq data
 - Use python to process filtered data to an appropriate format for downstream analysis
 
-## Single-Cell RNA-sequencing
+## Single-Cell RNA-sequencing (scRNA-seq)
 
-Transcriptomics studies were initially conducted using bulk RNA-sequencing but this method only compared the averages of all cells within cell populations, masking cellular heterogeneity. Single-cell RNA-sequencing.
+Transcriptomics studies to explore gene expression were initially conducted using bulk RNA-sequencing (RNA-seq), which provided the average gene expression profile for the population of cells within the sample. While bulk RNA-seq is useful for comparing gene expression levels between different conditions (such as control vs. disease states), it fails to capture the variability and unique gene expression patterns within individual cells, a phenomenon known as cellular heterogeneity.
 
-![Single Cells]()
+Cellular heterogeneity is critical in understanding complex biological processes. For example, within a tissue, not all cells behave identically. Some may be driving disease progression while others remain unaffected. By averaging gene expression in bulk RNA-seq, you lose this detailed, cell-specific information, which is crucial for uncovering mechanisms such as disease-specific gene expression or responses to treatment.
 
-For example, while bulk RNA-seq can facilitate explorations of gene expression between different conditions (e.g. disease and control), this is just calculated as the average expression of the total cell population within each condition. In contrast, when cells have been grouped, this more accurately captures gene expression driving the differences between conditions. Overall, this now shows the correct association between Gene A and Gene B within this example.
+Single-cell RNA-sequencing (scRNA-seq) overcomes this limitation by capturing and analysing gene expression at the individual cell level. Each transcript from each cell is sequenced, allowing researchers to identify and quantify mRNA molecules within thousands to millions of individual cells simultaneously.
 
-Each transcript is sequenced using standard technology platforms such as 10x Genomics or Drop-seq.  The sequenced reads are the raw data and need to be pre-processed before any downstream analysis. The basic steps of the workflow are: generation of the count matrix from the sequenced reads, creating a cell x gene matrix, quality control of raw counts and gene marker identification for cell typing.
+Why is Single-Cell Analysis Important?
+Single-cell RNA-seq enables:
 
-![Single Cells]()
+- Detection of rare cell populations that may play critical roles in disease.
+- Identification of cellular states within complex tissues, such as cancer or the brain.
+- Discovery of gene expression networks driving specific cellular behaviors.
+- Mapping of cell development processes, such as differentiation in stem cells.
 
-The number of reads from the sequenced transcripts within each cell are counted for each gene and input as a value within the matrix. This matrix is usually processed further to remove any poor quality cells, and outputs a filtered version of the matrix.
+For example, in studying cancer, using bulk RNA-seq may reveal overall differences between disease and control samples. However, scRNA-seq allows for identification of disease-relevant cell types, and uncovers how these cells behave differently at the individual level.
 
-We will be working with a filtered snRNA-seq dataset acquired from cellxgene. This particular dataset contains microglia from Control and Alzheimer's Disease patients.
+Each transcript is sequenced using standard technology platforms such as 10x Genomics.  The sequenced reads are the raw data and need to be pre-processed before any downstream analysis. 
+
+## Basic Workflow of scRNA-seq Data Processing
+The steps of single-cell RNA-seq analysis typically include:
+
+1. Cell isolation: Cells are separated from a tissue or sample.
+2. Library preparation: Single cells are encapsulated, and their RNA is reverse-transcribed into cDNA.
+3. Sequencing: The cDNA libraries are sequenced to capture all RNA transcripts present in each cell.
+4. Data generation: The sequenced reads are processed to generate a cell-by-gene count matrix, where each cell is represented by its unique expression profile.
+5. Data preprocessing: This includes quality control to filter out poor-quality cells or genes (low-read cells, doublets, and contaminants), normalisation to account for sequencing depth, and scaling to enable comparisons between cells.
+6. Downstream analysis: After preprocessing, the data is ready for various downstream analyses, such as clustering, cell-type identification, trajectory inference, and differential gene expression analysis.
+
+## Gene Expression Matrices
+The primary output of scRNA-seq is a gene expression matrix, where:
+
+- Rows represent genes
+- Columns represent cells
+
+Each entry in the matrix contains the count of reads corresponding to a gene in a specific cell. The goal is to prepare this matrix for downstream analysis by filtering out low-quality cells and genes that may introduce noise into the data.
+
+## Working with Public Single-Cell Datasets
+Numerous publicly accessible scRNA-seq datasets are available for download through repositories like:
+
+- Cellxgene (a tool for exploring large scRNA-seq datasets),
+- Gene Expression Omnibus (GEO), and
+- Human Cell Atlas (HCA)
+
+For this chapter, we will be using a filtered dataset from a public database focussing on B cells from both patients that are control and those with clonal haematopoiesis. 
 
 It is good practice to download the dataset for yourself to see what kind of data format you are working with and whether anything needs altered to fit the desired format for your project.
 
-In this case, some formatting is needed to correct the metadata into a useable format. Generally, this can be done in R and python. We will be continuing with python to keep the language used consistent.
+## Dataset Preparation in Python
+Once you have acquired the data, the next step is to load it into Python for inspection and processing. The dataset is typically in an HDF5-based format, such as .h5ad (used in AnnData), which stores the expression matrix along with metadata for cells and genes.
 
-See the docs/? notebook on how to load the data into python. Have a look at the data and format the metadata. When you open the file, as can be seen ? columns needs to be reformatted so that it displays ? instead.
-A correctly formatted h5ad object can be found in the solutions folder.
-You now have a filtered snRNA-seq object to work with for the next steps.
+Before analysis, it's essential to:
+
+- Review and reformat metadata: Metadata often contains important information about cell types, sample conditions, and batch effects. Ensuring this metadata is clean and well-structured is crucial for accurate downstream analysis.
+- Quality control: Check for missing or mislabeled data, and reformat columns as necessary.
+
+By the end of this chapter, you will have a clean, filtered single-cell RNA-seq object to use for gene network analysis.
 
 ## Resources
 
 For more information on single-cell RNA sequencing please see: <https://hbctraining.github.io/scRNA-seq/>
+<https://www.nature.com/articles/s12276-018-0071-8>
