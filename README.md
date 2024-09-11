@@ -1,20 +1,37 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Single-Cell Gene Network Analysis using LLMs
+# Single-Cell Gene Network Analysis
 
 <!-- Provide a short description to your project -->
 
 ## Description
 
-The aim of this exemplar is to understand and demonstrate how to carry out single-cell gene network analysis on real data. Specifically, we will model networks in a small, publicly available Alzheimer's Disease dataset as well as explore them further through downstream analysis. This will consist of characterising the networks through gene set enrichment analysis and understanding the principles behind this. The modelling itself will encompass learning how to use deep learning techniques, such as natural language processing and large language models to construct networks. Together, this will provide an undertanding as well as practical experience with an end-to-end pipeline using single-cell data for gene network analysis.
+The aim of this exemplar is to understand and demonstrate how to carry out single-cell gene network analysis on real data. Specifically, we will model networks in a small, publicly available Human Cancer dataset as well as explore them further through downstream analysis. This will consist of characterising the networks through gene set enrichment analysis and understanding the principles behind this. The modelling itself will encompass learning how to use both correlation-based approaches as well as deep learning techniques, such as large language models to construct networks. Together, this will provide an undertanding as well as practical experience with an end-to-end pipeline using single-cell data for gene network analysis.
 
 <!-- What should the students going through your exemplar learn -->
 
-## Learning Outcomes
+## Overall Learning Outcomes
 
-- Gain an understanding be able to summarise the significance of biological networks in interpreting complex cellular processes and disease mechanisms.
-- Be able to use knowledge of NLP and LLMs to apply a specific model to a test dataset, in order construct gene networks.
-- Evaluate and relate findings to practical implications of gene networks in biological research through gene set enrichment analysis.
+By the end of the series of chapters and notebooks you should be able to:
+
+1. Understand the Foundations of Single-Cell RNA-Sequencing (scRNA-seq):
+  - Comprehend the steps involved in scRNA-seq data processing, including generating count     matrices and performing quality control.
+  - Explain how scRNA-seq differs from bulk RNA-seq in capturing cellular heterogeneity.
+  - Explore publicly available snRNA-seq data and process it for downstream analysis using Python.
+2. Apply Techniques in Gene Network Analysis:
+  - Understand the concepts and methods involved in constructing gene networks from scRNA-seq data.
+  - Identify relationships between genes using co-expression based approaches.
+  - Visualise gene networks using tools such as NetworkX.
+3. Carry Out Gene Set Enrichment Analysis:
+  - Explain the significance of gene set enrichment and its role in interpreting gene networks.
+  - Perform pathway-based enrichment analyses using curated gene sets from resources like KEGG and Gene Ontology (GO).
+  - Apply statistical tests such as the Fisher Exact Test to assess the overrepresentation of gene sets.
+  - Implement multiple hypothesis correction methods like the false discovery rate (FDR) to ensure robust enrichment results.
+4. Utilise Large Language Models for Gene Network Predictions:
+  - Explain the basic principles of NLP, including tokenization, stemming, and dependency parsing.
+  - Recognize the capabilities of LLMs in analyzing complex biological datasets, even when data is limited.
+  - Apply pretrained models like scGPT to predict gene interactions and network dynamics in scRNA-seq data.
+  - Understand the role of transformers and attention mechanisms in enhancing biological predictions through context-aware learning.
 
 <!-- How long should they spend reading and practising using your Code.
 Provide your best estimate -->
@@ -33,6 +50,8 @@ Provide your best estimate -->
 - Basic knowledge on single-cell RNA-sequencing
 
 ## Getting Started
+
+Take a look at the table of contents below and follow the chapters from 1 to 4. These are also aligned with the notebooks and should give you background information as well as direction and motivation behind the notebooks. If you are ever unsure or don't understand how to do something on the workbooks, there are also fully worked through solutions that you can use.
 
 ### Cloning the repository
 
@@ -101,20 +120,8 @@ in a tree node.
 
 <!-- Instructions on how the student should start going through the exemplar.
 
-Structure this section as you see fit but try to be clear, concise and accurate
-when writing your instructions.
+Each jupyter notebook workbook is paired with a chapter of information ordered from 1 to 4. The notebooks can be accessed within the notebooks folder and the chapters can be accessed within the docs folder. Upon completion, you can go through the solutions notebooks which are also stored in the docs folder. 
 
-For example:
-Start by watching the introduction video,
-then study Jupyter notebooks 1-3 in the `intro` folder
-and attempt to complete exercise 1a and 1b.
-
-Once done, start going through through the PDF in the `main` folder.
-By the end of it you should be able to solve exercises 2 to 4.
-
-A final exercise can be found in the `final` folder.
-
-Solutions to the above can be found in `solutions`.
 -->
 
 ## Development
@@ -167,21 +174,49 @@ When dependencies are upgraded, both requirements.txt and dev-requirements.txt s
 
 ```log
 .
-├── examples
-│   ├── ex1
-│   └── ex2
-├── src
-|   ├── file1.py
-|   ├── file2.cpp
-|   ├── ...
-│   └── data
-├── app
+├── .github/workflows
+├── data
+|   ├── data
+|       ├── Bcell_datExpr_pseudobulk.csv
+│       └── Bcell_filtered_compressed.h5ad.gz
+|   ├── metadata
+|       ├── Bcell_metadata.csv
+│       └── Bcell_metadata_pseudobulk.csv
+│   └── other
+|       ├── h.all.v2023.2.Hs.symbols.gmt
+│       └── separated_communities.pkl
 ├── docs
-├── main
+|   ├── .icons/logos
+|   ├── assets
+|   ├── Chapter 1: Background on Single-Cell RNA-Sequencing
+|   ├── Chapter 2: Gene Network Analysis
+|   ├── Chapter 3: Gene Network Downstream Analysis
+│   └── Chapter 4: Understanding NLP and LLMs
+├── notebooks
+|   ├── solutions
+|       ├── 1.Correlation_Network_Analysis_and_Visualisation_Solution.ipynb
+|       ├── 2.Network_Analysis_Solution.ipynb
+|       ├── 3.Fisher_Exact_Test_Solution.ipynb
+│       └── 4.SCGPT_Solution.ipynb
+|   ├── workbooks
+|       ├── 1.Correlation_Network_Analysis_and_Visualisation_Workbook.ipynb
+|       ├── 2.Network_Analysis_Workbook.ipynb
+|       ├── 3.Fisher_Exact_Test_Workbook.ipynb
+│       └── 4.SCGPT_Workbook.ipynb
+|   ├── .placeholder
+|   ├── process_data.ipynb
+├── test
+|   ├── test_placeholder.py
+├── .gitignore
+├── .pre-commit-config.yaml
+├── LICENSE.md # Outlines what legal rights you have to use this software.
+├── README.md  # You are here!
+├── dev-requirements.txt # Development requirements
+├── mkdocs.yml # Tells readthedocs.com how to build the documentation.
+├── pyproject.toml # Machine readable information about the package.
+├── requirements.txt # Requirements for the notebooks.
 └── test
 ```
-
-<!-- Change this to your License. Make sure you have added the file on GitHub -->
 
 ## License
 
